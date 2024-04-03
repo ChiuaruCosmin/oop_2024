@@ -1,43 +1,28 @@
-#include "Sort.h"
 #include <iostream>
+#include "Number.h"
 
-int main() {
-    Sort s1(10, 1, 100);
-    Sort s2{ 5, 4, 3, 2, 1 };
-    std::vector<int> vec = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3 };
-    Sort s3(vec, 7);
-    Sort s4("10,40,100,5,70");
-    Sort s5(vec);
+int main()
+{
+	Number n1("10110010", 2);
+	Number n2("734", 8);
+	Number n3("FE", 16);
+	Number n4("1", 10);
+	Number n10 = n2;
 
-    std::cout << "Inainte de sortare: " << std::endl;
-    std::cout << "s1: ";
-    s1.Print();
-    std::cout << "s2: ";
-    s2.Print();
-    std::cout << "s3: ";
-    s3.Print();
-    std::cout << "s4: ";
-    s4.Print();
-    std::cout << "s5: ";
-    s5.Print();
+	if (n1 > n2) printf("n1 is bigger than n2\n"); else printf("n2 is bigger than n1\n");
 
-    s1.InsertSort(true);
-    s2.QuickSort(true);
-    s3.BubbleSort(true);
-    s4.InsertSort(true);
-    s5.QuickSort(true);
+	Number n5 = n3 + n4;
+	Number n6 = n3 - n4;
 
-    std::cout << "Dupa sortare: " << std::endl;
-    std::cout << "s1: ";
-    s1.Print();
-    std::cout << "s2: ";
-    s2.Print();
-    std::cout << "s3: ";
-    s3.Print();
-    std::cout << "s4: ";
-    s4.Print();
-    std::cout << "s5: ";
-    s5.Print();
+	n5.Print();
+	n6.Print();
 
-    return 0;
+	n3.SwitchBase(10);
+	n4 += n2;
+	n4.Print();
+	n4 = n5 = n6;
+	n4.Print();
+	--n2;
+	n2--;
+	n2.Print();
 }
